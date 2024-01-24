@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceibktt843p48"]
+
+[ext_resource type="PackedScene" uid="uid://dm2l74klxcmru" path="res://assets/ForegroundTilemap.tscn" id="1_6cs46"]
+[ext_resource type="PackedScene" uid="uid://yaxoharllgxv" path="res://Player.tscn" id="2_qde4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1ws5"]
+size = Vector2(20, 658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2wum"]
+size = Vector2(24, 661)
+
+[node name="Level1" type="Node2D"]
+
+[node name="ForegroundTilemap" parent="." instance=ExtResource("1_6cs46")]
+scale = Vector2(2, 2)
+layer_0/tile_data = PackedInt32Array(1179648, 393216, 1, 1245184, 393216, 2, 1179649, 458752, 1, 1245185, 458752, 2, 1179650, 458752, 1, 1245186, 458752, 2, 1179651, 458752, 1, 1245187, 458752, 2, 1179652, 458752, 1, 1245188, 458752, 2, 1179653, 458752, 1, 1245189, 458752, 2, 1179654, 458752, 1, 1245190, 458752, 2, 1179655, 458752, 1, 1245191, 458752, 2, 1179656, 458752, 1, 1245192, 458752, 2, 1179657, 458752, 1, 1245193, 458752, 2, 1179658, 458752, 1, 1245194, 458752, 2, 1179659, 458752, 1, 1245195, 458752, 2, 1179660, 458752, 1, 1245196, 458752, 2, 1179661, 458752, 1, 1245197, 458752, 2, 1179662, 458752, 1, 1245198, 458752, 2, 1179663, 458752, 1, 1245199, 458752, 2, 1179664, 458752, 1, 1245200, 458752, 2, 1179665, 458752, 1, 1245201, 458752, 2, 1179666, 458752, 1, 1245202, 458752, 2, 1179667, 458752, 1, 1245203, 458752, 2, 1179668, 458752, 1, 1245204, 458752, 2, 1179669, 458752, 1, 1245205, 458752, 2, 1179670, 458752, 1, 1245206, 458752, 2, 1179671, 458752, 1, 1245207, 458752, 2, 1179672, 458752, 1, 1245208, 458752, 2, 1179673, 458752, 1, 1245209, 458752, 2, 1179674, 458752, 1, 1245210, 458752, 2, 1179675, 458752, 1, 1245211, 458752, 2, 1179676, 458752, 1, 1245212, 458752, 2, 1179677, 458752, 1, 1245213, 458752, 2, 1179678, 458752, 1, 1245214, 458752, 2, 1179679, 458752, 1, 1245215, 458752, 2, 1179680, 458752, 1, 1245216, 458752, 2, 1245217, 458752, 2, 1179682, 458752, 1, 1245218, 458752, 2, 1179683, 589824, 1, 1245219, 589824, 2)
+
+[node name="Player" parent="." instance=ExtResource("2_qde4d")]
+position = Vector2(104, 424)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 328)
+shape = SubResource("RectangleShape2D_d1ws5")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1152, 317.5)
+shape = SubResource("RectangleShape2D_l2wum")
