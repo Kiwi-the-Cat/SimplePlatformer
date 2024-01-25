@@ -1,11 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceibktt843p48"]
+[gd_scene load_steps=6 format=3 uid="uid://ceibktt843p48"]
 
 [ext_resource type="PackedScene" uid="uid://dm2l74klxcmru" path="res://assets/ForegroundTilemap.tscn" id="1_6cs46"]
 [ext_resource type="PackedScene" uid="uid://yaxoharllgxv" path="res://Player.tscn" id="2_qde4d"]
-[ext_resource type="Texture2D" uid="uid://djs67qk88r7j2" path="res://assets/Background/BGBack.png" id="3_fvmyy"]
-[ext_resource type="Texture2D" uid="uid://d4hff5tm2us61" path="res://assets/Background/CloudsBack.png" id="3_wrqwc"]
-[ext_resource type="Texture2D" uid="uid://kkl76dicvfpb" path="res://assets/Background/CloudsFront.png" id="4_ffa5r"]
-[ext_resource type="Texture2D" uid="uid://pdfvk5vgh2ur" path="res://assets/Background/BGFront.png" id="4_yx3vg"]
+[ext_resource type="PackedScene" uid="uid://bcit5fwqw6gcq" path="res://assets/Background/parallax_background.tscn" id="3_n8r0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1ws5"]
 size = Vector2(20, 658)
@@ -35,32 +32,4 @@ metadata/_edit_lock_ = true
 position = Vector2(1152, 317.5)
 shape = SubResource("RectangleShape2D_l2wum")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="CloudsBack" type="Sprite2D" parent="ParallaxBackground/Sky"]
-position = Vector2(576, 320)
-scale = Vector2(2.26562, 2.025)
-texture = ExtResource("3_wrqwc")
-
-[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="CloudsFront" type="Sprite2D" parent="ParallaxBackground/Clouds"]
-position = Vector2(580, 324)
-scale = Vector2(2.26562, 2.025)
-texture = ExtResource("4_ffa5r")
-
-[node name="MoutainsBack" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/MoutainsBack"]
-position = Vector2(580, 324)
-scale = Vector2(2.26562, 2.025)
-texture = ExtResource("3_fvmyy")
-
-[node name="MountainsFront" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="BgFront" type="Sprite2D" parent="ParallaxBackground/MountainsFront"]
-position = Vector2(580, 324)
-scale = Vector2(2.26563, 2.025)
-texture = ExtResource("4_yx3vg")
+[node name="ParallaxBackground" parent="." instance=ExtResource("3_n8r0x")]

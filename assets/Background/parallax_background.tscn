@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcit5fwqw6gcq"]
+
+[ext_resource type="Texture2D" uid="uid://d4hff5tm2us61" path="res://assets/Background/CloudsBack.png" id="1_i0r2a"]
+[ext_resource type="Texture2D" uid="uid://kkl76dicvfpb" path="res://assets/Background/CloudsFront.png" id="2_2djt1"]
+[ext_resource type="Texture2D" uid="uid://djs67qk88r7j2" path="res://assets/Background/BGBack.png" id="3_tngkq"]
+[ext_resource type="Texture2D" uid="uid://pdfvk5vgh2ur" path="res://assets/Background/BGFront.png" id="4_6mqcm"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="Sky" type="ParallaxLayer" parent="."]
+
+[node name="CloudsBack" type="Sprite2D" parent="Sky"]
+position = Vector2(576, 320)
+scale = Vector2(2.26562, 2.025)
+texture = ExtResource("1_i0r2a")
+
+[node name="Clouds" type="ParallaxLayer" parent="."]
+
+[node name="CloudsFront" type="Sprite2D" parent="Clouds"]
+position = Vector2(580, 324)
+scale = Vector2(2.26562, 2.025)
+texture = ExtResource("2_2djt1")
+
+[node name="MoutainsBack" type="ParallaxLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="MoutainsBack"]
+position = Vector2(580, 324)
+scale = Vector2(2.26562, 2.025)
+texture = ExtResource("3_tngkq")
+
+[node name="MountainsFront" type="ParallaxLayer" parent="."]
+
+[node name="BgFront" type="Sprite2D" parent="MountainsFront"]
+position = Vector2(580, 324)
+scale = Vector2(2.26563, 2.025)
+texture = ExtResource("4_6mqcm")
