@@ -1,12 +1,69 @@
-[gd_scene load_steps=26 format=3 uid="uid://yaxoharllgxv"]
+[gd_scene load_steps=47 format=3 uid="uid://yaxoharllgxv"]
 
 [ext_resource type="Script" path="res://library/Player.gd" id="1_4dj5j"]
 [ext_resource type="Texture2D" uid="uid://c7qvqqgfl4ou8" path="res://assets/Player/Colour2/NoOutline/120x80_PNGSheets/_Idle.png" id="1_p8xr1"]
+[ext_resource type="Texture2D" uid="uid://7mio6rejrejd" path="res://assets/Player/Colour2/NoOutline/120x80_PNGSheets/_Fall.png" id="2_20c87"]
 [ext_resource type="Texture2D" uid="uid://bi4ce084lu30a" path="res://assets/Player/Colour2/NoOutline/120x80_PNGSheets/_Run.png" id="2_ah77f"]
+[ext_resource type="Texture2D" uid="uid://dbta4rgdrpj2r" path="res://assets/Player/Colour2/NoOutline/120x80_PNGSheets/_Crouch.png" id="2_y56ki"]
+[ext_resource type="Texture2D" uid="uid://rr80tqjab4b4" path="res://assets/Player/Colour2/NoOutline/120x80_PNGSheets/_Jump.png" id="3_qupl4"]
+[ext_resource type="Texture2D" uid="uid://iqfphsaaxye7" path="res://assets/Player/Colour2/NoOutline/120x80_PNGSheets/_CrouchTransition.png" id="3_tgllx"]
+[ext_resource type="Texture2D" uid="uid://ct02d7t2r1qma" path="res://assets/Player/Colour2/NoOutline/120x80_PNGSheets/_CrouchWalk.png" id="4_el7xr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p3ia6"]
 radius = 22.0
 height = 76.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajimt"]
+atlas = ExtResource("2_y56ki")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uivll"]
+atlas = ExtResource("3_tgllx")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxkyh"]
+atlas = ExtResource("4_el7xr")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpwq0"]
+atlas = ExtResource("4_el7xr")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p12gk"]
+atlas = ExtResource("4_el7xr")
+region = Rect2(240, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1jh2"]
+atlas = ExtResource("4_el7xr")
+region = Rect2(360, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbbol"]
+atlas = ExtResource("4_el7xr")
+region = Rect2(480, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kojtq"]
+atlas = ExtResource("4_el7xr")
+region = Rect2(600, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxivu"]
+atlas = ExtResource("4_el7xr")
+region = Rect2(720, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jlon"]
+atlas = ExtResource("4_el7xr")
+region = Rect2(840, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm2sy"]
+atlas = ExtResource("2_20c87")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0daeg"]
+atlas = ExtResource("2_20c87")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txiqk"]
+atlas = ExtResource("2_20c87")
+region = Rect2(240, 0, 120, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yvuvu"]
 atlas = ExtResource("1_p8xr1")
@@ -47,6 +104,18 @@ region = Rect2(960, 0, 120, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_is3ra"]
 atlas = ExtResource("1_p8xr1")
 region = Rect2(1080, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rps3c"]
+atlas = ExtResource("3_qupl4")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlhkg"]
+atlas = ExtResource("3_qupl4")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6qwq"]
+atlas = ExtResource("3_qupl4")
+region = Rect2(240, 0, 120, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2bybq"]
 atlas = ExtResource("2_ah77f")
@@ -92,6 +161,65 @@ region = Rect2(1080, 0, 120, 80)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ajimt")
+}],
+"loop": true,
+"name": &"Crouch",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uivll")
+}],
+"loop": true,
+"name": &"CrouchTransition",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxkyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpwq0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p12gk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1jh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbbol")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kojtq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxivu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jlon")
+}],
+"loop": true,
+"name": &"CrouchWalk",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bm2sy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0daeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txiqk")
+}],
+"loop": true,
+"name": &"Falling",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_yvuvu")
 }, {
 "duration": 1.0,
@@ -123,6 +251,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rps3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlhkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6qwq")
+}],
+"loop": true,
+"name": &"Jump",
 "speed": 10.0
 }, {
 "frames": [{
@@ -172,6 +314,6 @@ shape = SubResource("CapsuleShape2D_p3ia6")
 position = Vector2(9, -42)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_qcu25")
-animation = &"Idle"
-frame_progress = 0.364135
-metadata/_edit_lock_ = true
+animation = &"CrouchTransition"
+
+[node name="CoyoteTimer" type="Timer" parent="."]
